@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/74th/vscode-book-r2-golang/server"
+	"github.com/74th/vscode-book-r2-golang/gateway/server"
 )
 
 func main() {

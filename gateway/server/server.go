@@ -2,9 +2,9 @@ package server
 
 import (
 	"github.com/74th/vscode-book-r2-golang/domain/usecase"
-	"github.com/74th/vscode-book-r2-golang/memdb"
-	"github.com/74th/vscode-book-r2-golang/server/grpc"
-	"github.com/74th/vscode-book-r2-golang/server/openapi"
+	"github.com/74th/vscode-book-r2-golang/gateway/memdb"
+	"github.com/74th/vscode-book-r2-golang/gateway/server/grpc"
+	"github.com/74th/vscode-book-r2-golang/gateway/server/openapi"
 )
 
 // サーバAPI

@@ -7,7 +7,7 @@ import (
 
 	"github.com/74th/vscode-book-r2-golang/domain/entity"
 	"github.com/74th/vscode-book-r2-golang/domain/usecase"
-	"github.com/74th/vscode-book-r2-golang/server/grpc/pb"
+	"github.com/74th/vscode-book-r2-golang/gateway/server/grpc/pb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
 )
