@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option go_package = "github.com/74th/try-vscode-postman-golang-debug/server/grpc/pb";
+
+package todolist;
+
+service TodoListService {
+  rpc GetTasks(GetTaskRequest) returns (GetTaskResponse) {}
+  rpc AddTask(AddTaskRequest) returns (AddTaskResponse) {}
+  rpc DoneTask(DoneTaskRequest) returns (DoneTaskResponse) {}
+}
+
+message Task {
+  string id = 1;
+  string text = 2;
+  bool done = 4;
+}
+
+message GetTaskRequest {
+}
+
+message GetTaskResponse {
+  repeated Task tasks = 1;
+}
+
+message AddTaskRequest {
+  string title = 1;
+  string text = 2;
+}
+
+message AddTaskResponse {
+  Task task = 1;
+}
+
+message DoneTaskRequest {
+  string id = 1;
+}
+
+message DoneTaskResponse {
+  Task task = 1;
+}
