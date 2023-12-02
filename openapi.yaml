@@ -36,7 +36,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Task"
-  /tasks/{id}/done:
+  /api/tasks/{id}/done:
     put:
       summary: mark a task as done
       operationId: done
