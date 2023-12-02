@@ -5,7 +5,7 @@ import (
 
 	"github.com/74th/vscode-book-r2-golang/domain/entity"
 	"github.com/74th/vscode-book-r2-golang/domain/usecase"
-	"github.com/74th/vscode-book-r2-golang/memdb"
+	"github.com/74th/vscode-book-r2-golang/gateway/memdb"
 )
 
 func TestNew(t *testing.T) {

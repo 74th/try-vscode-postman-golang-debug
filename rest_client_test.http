@@ -2,11 +2,19 @@
 
 ### タスクの一覧
 GET http://127.0.0.1:8000/api/tasks
+Authorization: TEST
 
 ### タスクの登録
 POST http://127.0.0.1:8000/api/tasks
+Authorization: TEST
 
 {"text": "VS Codeのアップデート"}
 
 ### タスクの完了
 PATCH http://127.0.0.1:8000/api/tasks/1/done
+Authorization: TEST
+
+### Validate
+POST https://a274ebfe-ee67-4c03-a2db-f278c2535a83.mock.pstmn.io/api/token/validate
+
+{"token"; "hogehoge"}

@@ -1,8 +1,8 @@
 package server
 
 import (
+	"github.com/74th/vscode-book-r2-golang/domain/repository"
 	"github.com/74th/vscode-book-r2-golang/domain/usecase"
-	"github.com/74th/vscode-book-r2-golang/gateway/memdb"
 	"github.com/74th/vscode-book-r2-golang/gateway/server/grpc"
 	"github.com/74th/vscode-book-r2-golang/gateway/server/openapi"
 )
@@ -15,12 +15,8 @@ type Server struct {
 }
 
 // サーバAPIのインスタンスを作成する
-func New(restAddr string, grpcAddr string, webroot string) *Server {
-	interactor := &usecase.Interactor{
-		Database: memdb.NewDB(),
-	}
-
-	sv1 := openapi.New(restAddr, webroot, interactor)
+func New(restAddr string, grpcAddr string, webroot string, interactor *usecase.Interactor, tokenValidator repository.TokenValidator) *Server {
+	sv1 := openapi.New(restAddr, webroot, interactor, tokenValidator)
 	sv2 := grpc.New(grpcAddr, interactor)
 
 	s := &Server{
