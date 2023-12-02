@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json
+openapi: 3.1.0
+info:
+  title: Auth Token Validate API
+  version: 0.1.0
+servers:
+  - url: http://localhost:8000
+    description: Local server
+paths:
+  /api/token/validate:
+    post:
+      summary: validate token
+      operationId: validate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                token:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties: {}
+components:
+  schemas:
+    Token:
+      type: object
+      properties:
+        token:
+          type: string
