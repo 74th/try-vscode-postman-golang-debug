@@ -9,7 +9,8 @@
       "program": "${workspaceFolder}/cmd/server/main.go",
       "args": [
         "-webroot=${workspaceFolder}/../vscode-book-r2-typescript/public",
-        "-addr=0.0.0.0:8000"
+        "-restAddr=0.0.0.0:8000",
+        "-grpcAddr=0.0.0.0:8001"
       ]
     }
   ],

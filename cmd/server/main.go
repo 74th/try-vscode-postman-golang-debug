@@ -11,15 +11,17 @@ import (
 
 func main() {
 	var (
-		webroot string
-		addr    string
+		webroot  string
+		restAddr string
+		grpcAddr string
 	)
 
 	flag.StringVar(&webroot, "webroot", "./public", "web root path")
-	flag.StringVar(&addr, "addr", "0.0.0.0:8000", "server addr")
+	flag.StringVar(&restAddr, "restAddr", "0.0.0.0:8000", "server addr")
+	flag.StringVar(&grpcAddr, "grpcAddr", "0.0.0.0:8001", "server addr")
 	flag.Parse()
 
-	svr := server.New(addr, webroot)
+	svr := server.New(restAddr, grpcAddr, webroot)
 	err := svr.Serve()
 	if err != nil {
 		os.Exit(1)
