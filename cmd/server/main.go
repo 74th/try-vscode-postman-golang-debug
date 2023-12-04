@@ -9,7 +9,7 @@ import (
 	"github.com/74th/vscode-book-r2-golang/domain/usecase"
 	"github.com/74th/vscode-book-r2-golang/gateway/memdb"
 	"github.com/74th/vscode-book-r2-golang/gateway/server"
-	"github.com/74th/vscode-book-r2-golang/gateway/server/token"
+	"github.com/74th/vscode-book-r2-golang/gateway/token"
 )
 
 func main() {
