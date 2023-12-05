@@ -9,6 +9,7 @@ import (
 	"github.com/74th/vscode-book-r2-golang/domain/usecase"
 	"github.com/74th/vscode-book-r2-golang/gateway/server/grpc/pb"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	"google.golang.org/grpc/status"
 )
 
@@ -94,6 +95,7 @@ func (s *Server) Serve() error {
 
 	grpcServer := grpc.NewServer()
 	pb.RegisterTodoListServiceServer(grpcServer, s)
+	reflection.Register(grpcServer)
 
 	errChan := make(chan error, 1)
 	timer := time.NewTimer(100 * time.Millisecond)
